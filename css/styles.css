@@ -1,0 +1,95 @@
+/* reset */
+
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+/* maquetado general */
+
+body{
+    background: #dbdbdb;
+    font: 14px 'Segoe UI', Arial, sans-serif;
+}
+
+/* estilizado */
+/*barra de navegación del header*/
+
+.container{
+    display: block;
+    width: 70%;
+    margin: 10px auto;
+}
+
+#navbar {
+    display: block;
+    background-color: rgb(101, 160, 238);
+    height: 50px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+#navbar a{
+    color: white;
+    outline: none;
+    display: inline-block;
+    height: 100%;
+    line-height: 47px;
+    padding: 0 15px;
+}
+
+#navbar a:hover, #navbar a.active{
+    background-color: blue;
+}
+
+
+/*Galeria*/
+
+#main{
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    margin: 0 auto 10px auto;
+}
+
+#main ul{
+    list-style: none;
+}
+
+.gallery-container {
+    display: block;
+    width: 70%;
+    margin: 10px auto;
+}
+
+#main li{
+    float: left;
+    margin: 6px;
+    width: 125px;
+    height: 96px;
+    -moz-box-shadow: 0 0 5px #000;
+	-webkit-box-shadow: 0 0 5px #000;
+    box-shadow: 0 0 5px #000;
+}
+
+#main li img{
+    width: 100%;
+    height: 100%;
+}
+
+#main ul.hidden{
+    display: none;
+}
+
+/*footer*/
+
+footer{
+    width:100%;
+}
+
+footer p{
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+}
