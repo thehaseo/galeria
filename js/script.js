@@ -4,7 +4,7 @@ $(document).ready(function() {
 
     items.each(function(value){
         let elem = $(this);
-        tag = elem.data('tags');
+        let tag = elem.data('tags');
         
         // adding data attribute for quicksand
         elem.attr('data-id', value);
@@ -12,10 +12,11 @@ $(document).ready(function() {
         if (!(value in itemsByTags)){
             itemsByTags[value] = [];
         }
+        // adding image to array 
         itemsByTags[value].push(elem);
     })
     // Create "all items" option
-    createLists('Todas', items);
+    createLists('Todas', items, false);
 
     $.each(itemsByTags, function(key, value){
         createLists(key, value);
@@ -30,11 +31,17 @@ $(document).ready(function() {
     $('#navbar a:first').click();
 
     // create the lists for quicksand animation
-    function createLists(text, item){
+    function createLists(text, item, newList=true){
         // Create empty ul
         let ul = $('<ul>', {'class': 'hidden'});
         $.each(item, function(){
-            $(this).clone().appendTo(ul)
+            if (newList){
+                let liElement = $(this).clone();
+                liElement.children('a').attr('data-fancybox', text);
+                liElement.appendTo(ul);
+            } else {
+                $(this).clone().appendTo(ul);
+            }
         });
         
         //Add to container div
